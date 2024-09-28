@@ -10,7 +10,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [process.env.frontendUrl],
+    origin: ["https://chat-app-mkaif.vercel.app"],
     methods: ["GET", "POST"],
   },
 });
