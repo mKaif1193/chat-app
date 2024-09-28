@@ -18,7 +18,7 @@ const Message = ({ message }) => {
   return (
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">
-        <div className="w-6 sm:w-10 rounded-full">
+        <div className="w-8 sm:w-10 rounded-full">
           <img alt="User Profile Image" src={profilePic} />
         </div>
       </div>
