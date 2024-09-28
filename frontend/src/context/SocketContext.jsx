@@ -37,7 +37,7 @@ export const SocketContextProvider = ({ children }) => {
       }
     }
 
-    toast(`${socket}`);
+    toast.success(`${socket}`);
   }, [authUser]);
 
   return (
