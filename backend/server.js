@@ -1,7 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import cookieParser from "cookie-parser";
-// import cors from "cors";
+import cors from "cors";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
@@ -10,7 +10,7 @@ import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
-// app.use(cors());
+app.use(cors({ origin: "https://chat-app-mkaif.vercel.app" }));
 app.use(express.json());
 app.use(cookieParser());
 
