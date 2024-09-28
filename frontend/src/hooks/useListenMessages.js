@@ -13,7 +13,7 @@ const useListenMessages = () => {
       newMessage.shouldShake = true;
       setMessages([...messages, newMessage]);
 
-      toast.success(messages);
+      toast.success("Message Listened");
 
       const sound = new Audio(notificationSound);
       sound.play();
@@ -21,6 +21,7 @@ const useListenMessages = () => {
 
     return () => socket?.off("newMessage");
   }, [socket, setMessages, messages]);
+  return messages;
 };
 
 export default useListenMessages;
