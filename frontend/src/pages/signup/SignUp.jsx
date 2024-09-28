@@ -1,0 +1,133 @@
+import { Link } from "react-router-dom";
+import GenderCheckbox from "./GenderCheckbox";
+import { useState } from "react";
+import useSignup from "../../hooks/useSignup";
+
+const SignUp = () => {
+  const [inputs, setInputs] = useState({
+    fullName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+  });
+
+  const { loading, signup } = useSignup();
+
+  const handleCheckboxChange = (gender) => {
+    setInputs({ ...inputs, gender });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await signup(inputs);
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center w-auto sm:min-w-96 mx-auto">
+      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+        <div className="flex items-center justify-center gap-4">
+          <h1 className="text-xl sm:text-3xl font-semibold text-center text-gray-300">
+            Sign Up
+          </h1>
+          <img
+            src="/logo.png"
+            alt="Chat App Logo"
+            className="w-6 h-6 sm:w-10 sm:h-10"
+          />
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label className="label p-2">
+              <span className="text-sm sm:text-base label-text">Full Name</span>
+            </label>
+            <input
+              type="text"
+              placeholder="John Doe"
+              className="w-full input input-bordered input-sm sm:input-md h-9 sm:h-10"
+              value={inputs.fullName}
+              onChange={(e) =>
+                setInputs({ ...inputs, fullName: e.target.value })
+              }
+            />
+          </div>
+
+          <div>
+            <label className="label p-2 ">
+              <span className="text-sm sm:text-base label-text">Username</span>
+            </label>
+            <input
+              type="text"
+              placeholder="johndoe"
+              className="w-full input input-bordered input-sm sm:input-md h-9 sm:h-10"
+              value={inputs.username}
+              onChange={(e) =>
+                setInputs({ ...inputs, username: e.target.value })
+              }
+            />
+          </div>
+
+          <div>
+            <label className="label">
+              <span className="text-sm sm:text-base label-text">Password</span>
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              className="w-full input input-bordered input-sm sm:input-md h-9 sm:h-10"
+              value={inputs.password}
+              onChange={(e) =>
+                setInputs({ ...inputs, password: e.target.value })
+              }
+            />
+          </div>
+
+          <div>
+            <label className="label">
+              <span className="text-sm sm:text-base label-text">
+                Confirm Password
+              </span>
+            </label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              className="w-full input input-bordered input-sm sm:input-md h-9 sm:h-10"
+              value={inputs.confirmPassword}
+              onChange={(e) =>
+                setInputs({ ...inputs, confirmPassword: e.target.value })
+              }
+            />
+          </div>
+
+          <GenderCheckbox
+            onCheckboxChange={handleCheckboxChange}
+            selectedGender={inputs.gender}
+          />
+
+          <Link
+            to={"/login"}
+            className="text-xs sm:text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
+            href="#"
+          >
+            Already have an account?
+          </Link>
+
+          <div>
+            <button
+              className="btn btn-block btn-xs sm:btn-sm mt-2 h-7 sm:h-10 border border-slate-700"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Sign Up"
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+export default SignUp;
