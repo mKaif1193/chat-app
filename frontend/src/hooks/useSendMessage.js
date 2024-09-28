@@ -25,7 +25,6 @@ const useSendMessage = () => {
       }
 
       setMessages([...messages, data]);
-      toast.success(backendUrl)
     } catch (error) {
       toast.error(error.message);
     } finally {
