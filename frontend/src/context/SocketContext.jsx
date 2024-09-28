@@ -3,8 +3,6 @@ import { createContext, useState, useEffect, useContext } from "react";
 import { useAuthContext } from "./AuthContext";
 import io from "socket.io-client";
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
 const SocketContext = createContext();
 
 export const useSocketContext = () => {
@@ -18,7 +16,8 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("https://chat-app-mkaif.vercel.app", {
+      // const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
+      const socket = io("https://chat-app-backend-omega-two.vercel.app", {
         query: {
           userId: authUser._id,
         },
