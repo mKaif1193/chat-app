@@ -1,6 +1,6 @@
 # Chat App: A Real-Time Messaging App
 
-![Chat App Logo](/frontend/public/logo.png)
+<img src="frontend/public/logo.png" alt="Chat App Logo" width="200"/>
 
 ## Table of Contents
 
