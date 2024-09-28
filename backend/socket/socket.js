@@ -5,12 +5,12 @@ import cors from "cors";
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://chat-app-mkaif.vercel.app"],
+    origin: ["https://chat-app-mkaif.vercel.app/"],
     methods: ["GET", "POST"],
   },
 });
