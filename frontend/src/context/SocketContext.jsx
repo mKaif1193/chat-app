@@ -16,7 +16,6 @@ export const SocketContextProvider = ({ children }) => {
   const { authUser } = useAuthContext();
 
   useEffect(() => {
-    toast.success(`${import.meta.env.VITE_BACKEND_URL}`);
     if (authUser) {
       const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
         query: {
@@ -25,6 +24,7 @@ export const SocketContextProvider = ({ children }) => {
       });
 
       setSocket(socket);
+      toast("socket : ", socket);
 
       socket.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
