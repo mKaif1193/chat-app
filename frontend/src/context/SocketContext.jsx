@@ -18,7 +18,7 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io(backendUrl, {
+      const socket = io("https://chat-app-mkaif.vercel.app", {
         query: {
           userId: authUser._id,
         },
