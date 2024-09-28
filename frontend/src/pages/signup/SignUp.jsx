@@ -27,20 +27,20 @@ const SignUp = () => {
     <div className="flex flex-col items-center justify-center w-auto sm:min-w-96 mx-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
         <div className="flex items-center justify-center gap-4">
-          <h1 className="text-xl sm:text-3xl font-semibold text-center text-gray-300">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-center text-gray-300">
             Sign Up
           </h1>
           <img
             src="/logo.png"
             alt="Chat App Logo"
-            className="w-6 h-6 sm:w-10 sm:h-10"
+            className="w-7 h-7 sm:w-12 sm:h-12"
           />
         </div>
 
         <form onSubmit={handleSubmit}>
           <div>
             <label className="label p-2">
-              <span className="text-sm sm:text-base label-text">Full Name</span>
+              <span className="text-base label-text">Full Name</span>
             </label>
             <input
               type="text"
@@ -55,7 +55,7 @@ const SignUp = () => {
 
           <div>
             <label className="label p-2 ">
-              <span className="text-sm sm:text-base label-text">Username</span>
+              <span className="text-base label-text">Username</span>
             </label>
             <input
               type="text"
@@ -70,7 +70,7 @@ const SignUp = () => {
 
           <div>
             <label className="label">
-              <span className="text-sm sm:text-base label-text">Password</span>
+              <span className="text-base label-text">Password</span>
             </label>
             <input
               type="password"
@@ -107,7 +107,7 @@ const SignUp = () => {
 
           <Link
             to={"/login"}
-            className="text-xs sm:text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
+            className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
             href="#"
           >
             Already have an account?
@@ -115,7 +115,7 @@ const SignUp = () => {
 
           <div>
             <button
-              className="btn btn-block btn-xs sm:btn-sm mt-2 h-7 sm:h-10 border border-slate-700"
+              className="btn btn-block btn-xs sm:btn-sm mt-2 h-8 sm:h-10 border border-slate-700"
               disabled={loading}
             >
               {loading ? (
