@@ -16,13 +16,13 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
+      const socketMsg = io(`${import.meta.env.VITE_BACKEND_URL}`, {
         query: {
           userId: authUser._id,
         },
       });
 
-      setSocket(socket);
+      setSocket(socketMsg);
 
       socket.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
@@ -35,7 +35,7 @@ export const SocketContextProvider = ({ children }) => {
         setSocket(null);
       }
     }
-  }, [authUser]);
+  }, [authUser, socket]);
 
   return (
     <SocketContext.Provider value={{ socket, onlineUsers }}>
