@@ -10,9 +10,7 @@ import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
-app.use(
-  cors({ origin: "https://chat-app-mkaif.vercel.app", credentials: true })
-);
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
