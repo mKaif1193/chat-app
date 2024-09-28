@@ -9,7 +9,7 @@ const Messages = () => {
   const { messages, loading } = useGetMessages();
   const msg = useListenMessages();
   toast.success("msg");
-  toast.success(msg[0]);
+  toast.success(msg);
   const lastMessageRef = useRef();
 
   useEffect(() => {
