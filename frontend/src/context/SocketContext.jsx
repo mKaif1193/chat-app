@@ -24,7 +24,7 @@ export const SocketContextProvider = ({ children }) => {
       });
 
       setSocket(socket);
-      toast(typeof socket);
+      toast(`${JSON.stringify(socket)}`);
 
       socket.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
