@@ -2,6 +2,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useAuthContext } from "./AuthContext";
 import io from "socket.io-client";
+import { toast } from "react-hot-toast";
 
 const SocketContext = createContext();
 
@@ -15,9 +16,9 @@ export const SocketContextProvider = ({ children }) => {
   const { authUser } = useAuthContext();
 
   useEffect(() => {
+    toast.success(`${import.meta.env.VITE_BACKEND_URL}`);
     if (authUser) {
-      // const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
-      const socket = io("https://chat-app-backend-omega-two.vercel.app", {
+      const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
         query: {
           userId: authUser._id,
         },
