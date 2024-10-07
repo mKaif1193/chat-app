@@ -31,7 +31,7 @@ const SignUp = () => {
             Sign Up
           </h1>
           <img
-            src="/logo2.png"
+            src="/logo2r.png"
             alt="Chat App Logo"
             className="w-7 h-7 sm:w-12 sm:h-12"
           />
