@@ -1,6 +1,6 @@
-# Chat App: A Real-Time Messaging App
+# Chaty: A Real-Time Messaging App
 
-<img src="frontend/public/logo.png" alt="Chat App Logo" width="200"/>
+<img src="frontend/public/logo1.png" alt="Chat App Logo" width="300"/>
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@
 
 ## Overview
 
-Chat app is a real-time messaging application based on MERN stack technology. Provides secure user authentication, real-time communication through Socket.IO and a responsive, user-friendly interface.Users are able to send and receive messages with notification ringtone in real-time and view active users. The app uses Daisy UI's modern design elements, backed by global state management with Zustand.
+Chaty is a real-time messaging application based on MERN stack technology. Provides secure user authentication, real-time communication through Socket.IO and a responsive, user-friendly interface.Users are able to send and receive messages with notification ringtone in real-time and view active users. The app uses Daisy UI's modern design elements, backed by global state management with Zustand.
 
 ## Features
 
