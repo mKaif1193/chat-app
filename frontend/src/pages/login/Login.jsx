@@ -17,7 +17,7 @@ const Login = () => {
     <div className="flex flex-col items-center justify-center w-auto sm:min-w-96 mx-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
         <img
-          src="/logo.png"
+          src="/logo2.png"
           alt="Chat App Logo"
           className="w-7 h-7 sm:w-12 sm:h-12 mx-auto mb-4"
         />
