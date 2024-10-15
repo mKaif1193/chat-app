@@ -21,7 +21,9 @@ const useSignup = () => {
       confirmPassword,
       gender,
     });
-    if (!success) return;
+    if (!success) {
+      return;
+    }
 
     setLoading(true);
     try {
