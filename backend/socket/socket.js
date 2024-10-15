@@ -10,7 +10,6 @@ const io = new Server(server, {
   cors: {
     origin: ["https://chat-app-mkaif.vercel.app"],
     methods: ["GET", "POST"],
-    credentials: true,
   },
 });
 
@@ -18,7 +17,6 @@ app.use(
   cors({
     origin: "https://chat-app-mkaif.vercel.app",
     methods: ["GET", "POST"],
-    credentials: true,
   })
 );
 
